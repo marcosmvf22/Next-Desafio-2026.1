@@ -1,4 +1,4 @@
-Repositório base para o Desafio de Next 2025.2
+Repositório base para o Desafio de Next 2026.1
 
 Nesse repositório será encontrada a configuração base para o começo do desafio, bem como os arquivos necessários para a conexão e semeadura do banco de dados.
 
