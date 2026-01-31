@@ -8,6 +8,7 @@ const geistSans = Geist({
 });
 
 const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
   weight: ['200','300', '400', '500', '600', '700', '800'],
   style: "normal",
   subsets: ['latin']
@@ -31,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${jetbrains.variable} antialiased`}
       >
         {children}
       </body>

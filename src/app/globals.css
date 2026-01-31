@@ -3,5 +3,8 @@
 @theme {
   --color-azul: #1D5DAF;
   --color-azul-escuro: #002A71;
-  --font-jetbrains: jetbrains;
+}
+
+body{
+  font-family: var(--font-jetbrains);
 }

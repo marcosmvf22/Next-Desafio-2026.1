@@ -10,10 +10,10 @@ import { Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <header className="bg-[#1D5DAF] sticky top-0 z-20 mx-auto w-full py-8 px-4 md:p-0 mb-8">
+    <header className="bg-azul sticky top-0 z-20 mx-auto w-full py-8 px-4 md:p-0 mb-8">
         <div className="flex flex-row items-center justify-between w-full pr-10">
             <div className="flex flex-col gap-3 items-center p-2.5">
-                <div className="text-white p-2.5 text-3xl font-normal font-jetbrains">
+                <div className="text-white p-2.5 text-3xl font-normal ">
                     Redes Sociais
                 </div>
                 <div className="flex flex-row gap-3 text-white p-2.5">
@@ -23,7 +23,7 @@ export default function Footer() {
                     <Twitter className="h-10 w-10"/>
                 </div>
             </div>
-            <div className="flex flex-col items-center text-white pb-4 font-jetbrains text-md font-normal">
+            <div className="flex flex-col items-center text-white pb-4 text-md font-normal">
                 <Image
                     src={'/logo/logo-bluestars.png'}
                     alt='Logo do blog'
@@ -33,7 +33,7 @@ export default function Footer() {
                 />
                 © 2026 Todos os direitos reservados
             </div>
-            <div className="flex flex-col items-center text-white gap-4 font-jetbrains font-normal text-xl">
+            <div className="flex flex-col items-center text-white gap-4 font-normal text-xl">
                 Contato
                 <div className="flex flex-row gap-2 items-start w-full">
                     <Phone/>
