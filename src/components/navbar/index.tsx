@@ -14,7 +14,7 @@ const links = [
 
 export default function Navbar() {
   return (
-    <header className="bg-[#1D5DAF] sticky top-0 z-20 mx-auto w-full py-8 px-4 md:p-0 mb-8">
+    <header className="bg-[#1D5DAF] sticky top-0 z-20 mx-auto w-full py-8 px-4 md:p-0">
         <div className="flex flex-row items-center justify-between w-full pr-10 font-jetbrains">
             <Link href='/' className="flex gap-4 items-center">
                 <Image
