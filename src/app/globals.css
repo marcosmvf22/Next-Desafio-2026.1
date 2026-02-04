@@ -10,3 +10,18 @@
 @theme inline{
   --font-jetbrains: var(--font-jetbrains), system-ui, sans-serif;
 }
+
+.swiper-pagination {
+  position: relative !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #002A71 !important;
+  opacity: 0.5;
+  width: 12px;
+  height: 12px;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
