@@ -5,6 +5,6 @@
   --color-azul-escuro: #002A71;
 }
 
-body{
-  font-family: var(--font-jetbrains);
+@theme inline{
+  --font-jetbrains: var(--font-jetbrains), system-ui, sans-serif;
 }

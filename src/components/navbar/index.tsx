@@ -15,7 +15,7 @@ const links = [
 export default function Navbar() {
   return (
     <header className="bg-[#1D5DAF] sticky top-0 z-20 mx-auto w-full py-8 px-4 md:p-0 mb-8">
-        <div className="flex flex-row items-center justify-between w-full pr-10">
+        <div className="flex flex-row items-center justify-between w-full pr-10 font-jetbrains">
             <Link href='/' className="flex gap-4 items-center">
                 <Image
                   src={'/logo/logo-bluestars.png'}
@@ -27,7 +27,7 @@ export default function Navbar() {
             </Link>
             <div className="flex flex-row items-center gap-5">
               {links.map((link) => (
-                <Link key={link.href} href={link.href} className="bg-azul-escuro py-3 px-4 rounded-xl text-white font-jetbrains">
+                <Link key={link.href} href={link.href} className="bg-azul-escuro py-3 px-4 rounded-xl text-white">
                   {link.label}
                 </Link>
               ))}

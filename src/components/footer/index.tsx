@@ -11,9 +11,9 @@ import { Mail } from "lucide-react";
 export default function Footer() {
   return (
     <header className="bg-azul sticky top-0 z-20 mx-auto w-full py-8 px-4 md:p-0 mb-8">
-        <div className="flex flex-row items-center justify-between w-full pr-10">
+        <div className="flex flex-row items-center justify-between w-full pr-10  font-jetbrains">
             <div className="flex flex-col gap-3 items-center p-2.5">
-                <div className="text-white p-2.5 text-3xl font-normal ">
+                <div className="text-white p-2.5 text-3xl font-normal">
                     Redes Sociais
                 </div>
                 <div className="flex flex-row gap-3 text-white p-2.5">
