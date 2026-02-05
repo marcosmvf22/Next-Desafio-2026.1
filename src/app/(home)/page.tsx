@@ -3,6 +3,7 @@
 import HeroSection from "@/src/components/home/herosection";
 import Carrossel from "../../components/home/carrossel";
 import SobreNos from "@/src/components/home/sobre-nos";
+import PrinProdutos from "@/src/components/home/principais-produtos";
 
 export default function Home() {
   const cards = [
@@ -61,6 +62,7 @@ export default function Home() {
     <HeroSection />
     <Carrossel cards={cards} />
     <SobreNos />
+    <PrinProdutos cards={cards} />
     </div>
   );
 }

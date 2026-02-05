@@ -10,7 +10,7 @@ interface CardProps {
 
 export default function Card({ image, description, price }: CardProps) {
   return (
-    <div className="bg-azul-claro sticky top-0 z-20 mx-auto w-full py-8 px-4 md:p-0 flex flex-col items-center gap-4 rounded-xl">
+    <div className="bg-azul-claro mx-auto w-full py-8 pb-4 px-4 flex flex-col items-center gap-4 rounded-xl">
         <div>
             <Image
                 src={image}

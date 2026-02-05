@@ -7,7 +7,7 @@ import { Heart } from "lucide-react";
 
 export default function SobreNos() {
   return (
-    <div className="flex flex-col gap-16 items-center px-18 pb-20 pt-12 bg-azul font-jetbrains">
+    <div className="flex flex-col gap-16 items-center px-18 pb-12 pt-12 bg-azul font-jetbrains">
       <div className="flex flex-row gap-20 font-extrabold">
         <div className="flex flex-col text-azul-claro w-1/2 gap-6 text-center">
           <h1 className="text-5xl">Sobre nós</h1>
