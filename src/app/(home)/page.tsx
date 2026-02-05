@@ -2,6 +2,7 @@
 
 import HeroSection from "@/src/components/home/herosection";
 import Carrossel from "../../components/home/carrossel";
+import SobreNos from "@/src/components/home/sobre-nos";
 
 export default function Home() {
   const cards = [
@@ -59,7 +60,7 @@ export default function Home() {
     <div className="flex flex-col gap-0 m-0 p-0">
     <HeroSection />
     <Carrossel cards={cards} />
-      
+    <SobreNos />
     </div>
   );
 }
