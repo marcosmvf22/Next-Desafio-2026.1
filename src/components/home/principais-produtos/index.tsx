@@ -9,11 +9,11 @@ interface CardProps {
   price: string;
 }
 
-interface CarrosselProps {
+interface Props {
   cards: CardProps[];
 }
 
-export default function PrinProdutos({ cards }: CarrosselProps) {
+export default function PrinProdutos({ cards }: Props) {
   return (
     <div className="flex flex-col bg-gradient-to-b from-azul to-azul-medio font-jetbrains px-18 py-12 pb-20 gap-10">
       <p className="font-extrabold text-4xl text-azul-claro text-center">Principais Produtos</p>
