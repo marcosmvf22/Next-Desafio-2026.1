@@ -18,12 +18,12 @@ interface Props {
 
 export default function Produtos({ cards }: Props) {
   return (
-    <div className="flex flex-col px-18 py-10 g-16">
+    <div className="flex flex-col px-18 py-10 gap-16">
       <div className="flex flex-row justify-between items-center px-8 py-4 font-jetbrains">
         <h1 className="text-4xl text-azul-escuro font-extrabold">Produtos</h1>
         <Pesquisa />
       </div>
-      <div>
+      <div className="grid grid-cols-4 grid-rows-2 gap-15 pt-10">
         {cards.map((card) => (
           <Card
             key={card.id}
