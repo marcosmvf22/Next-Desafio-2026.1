@@ -1,7 +1,7 @@
 'use client';
 
-import DescricaoPVI from "./descricao";
-import ProdutoPVI from "./produto";
+import DescricaoPVI from "./produto";
+import ProdutoPVI from "./descricao";
 
 export default function PVI() {
     return (
