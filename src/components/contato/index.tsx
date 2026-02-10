@@ -33,6 +33,9 @@ export default function Contato() {
               className="bg-azul-claro border-azul-escuro rounded-md w-full h-full p-2 text-left"
             />
           </form>
+          <button className="bg-azul-medio text-azul-escuro font-bold rounded-md flex justify-center w-full p-2">
+            <p>Enviar</p>
+          </button>
         </div>
         <Mapa />
       </div>
