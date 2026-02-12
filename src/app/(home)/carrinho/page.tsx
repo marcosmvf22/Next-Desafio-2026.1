@@ -29,9 +29,9 @@ export default function PagCarrinho() {
         price: "R$ 42,90",
     },
   ];
-  return ( 
-    <div className="bg-">
-    <Carrinho carrinho={carrinho} />
+  return (
+    <div className="bg-[url('/logo/carrinho.png')]">
+      <Carrinho carrinho={carrinho} />
     </div>
   );
 }

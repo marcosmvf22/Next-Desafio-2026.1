@@ -36,7 +36,7 @@ export default function Carrinho({carrinho}: Props) {
   });
 
   return (
-    <div className="flex flex-row bg-azul-medio font-jetbrains text-azul-escuro gap-30 px-30 py-15">
+    <div className="flex flex-row bg-[url('/logo/carrinho.png')] w-full h-full bg-cover font-jetbrains text-azul-escuro gap-30 px-30 py-15">
       <div className="flex flex-col gap-10 w-1/2">
         <h1 className="text-azul-claro text-3xl text-start font-bold">
           Meu Carrinho
