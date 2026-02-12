@@ -19,7 +19,7 @@ export default function CardCarrinho({
   price,
 }: CarrinhoProps) {
   return (
-    <div className="flex flex-col p-5 gap-4 bg-azul-claro rounded-lg w-1/3 font-jetbrains">
+    <div className="flex flex-col p-5 gap-4 bg-azul-claro rounded-lg w-full font-jetbrains">
       <div className="flex flex-row gap-5 items-center text-xl">
         <Image
           src={image}

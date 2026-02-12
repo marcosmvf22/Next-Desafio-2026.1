@@ -11,8 +11,27 @@ export default function PagCarrinho() {
         size: "M",
         quantity: 2,
         price: "R$ 49,90",
-    },];
+    },
+    {
+      id: 2,
+        image: "/logo/camisa1.png",
+        title: "Camiseta Confortável",
+        size: "M",
+        quantity: 1,
+        price: "R$ 99,90",
+    },
+    {
+      id: 3,
+        image: "/logo/camisa1.png",
+        title: "Camiseta Confortável",
+        size: "M",
+        quantity: 1,
+        price: "R$ 42,90",
+    },
+  ];
   return ( 
+    <div className="bg-">
     <Carrinho carrinho={carrinho} />
+    </div>
   );
 }
