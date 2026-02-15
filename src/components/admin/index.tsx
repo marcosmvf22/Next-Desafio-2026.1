@@ -1,6 +1,6 @@
 "use client";
 
-import { Eye, Pencil, Plus, Trash } from "lucide-react";
+import { Plus } from "lucide-react";
 import Tabela from "./tabela";
 
 export default function Admin() {
