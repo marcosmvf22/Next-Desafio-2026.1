@@ -31,13 +31,19 @@ export default function Tabela() {
               <th className="px-6 py-4">1</th>
               <th className="px-6 py-4">
                 <span className="hover:underline">
-                  Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto. 
+                  {"Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto.".slice(
+                    0,
+                    24,
+                  ) + "..."}
                 </span>
               </th>
               <th className="px-6 py-4">R$69,90</th>
               <th className="px-6 py-4">
                 <span className="hover:underline">
-                  Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto. 
+                  {"Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto.".slice(
+                    0,
+                    32,
+                  ) + "..."}
                 </span>
               </th>
               <th className="px-6 py-4">
@@ -60,13 +66,19 @@ export default function Tabela() {
               <th className="px-6 py-4">2</th>
               <th className="px-6 py-4">
                 <span className="hover:underline">
-                  Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto. 
+                  {"Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto.".slice(
+                    0,
+                    24,
+                  ) + "..."}
                 </span>
               </th>
               <th className="px-6 py-4">R$69,90</th>
               <th className="px-6 py-4">
                 <span className="hover:underline">
-                  Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto. 
+                  {"Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto.".slice(
+                    0,
+                    32,
+                  ) + "..."}
                 </span>
               </th>
               <th className="px-6 py-4">
@@ -89,13 +101,19 @@ export default function Tabela() {
               <th className="px-6 py-4">3</th>
               <th className="px-6 py-4">
                 <span className="hover:underline">
-                  Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto. 
+                  {"Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto.".slice(
+                    0,
+                    24,
+                  ) + "..."}
                 </span>
               </th>
               <th className="px-6 py-4">R$69,90</th>
               <th className="px-6 py-4">
                 <span className="hover:underline">
-                  Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto. 
+                  {"Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto.".slice(
+                    0,
+                    32,
+                  ) + "..."}
                 </span>
               </th>
               <th className="px-6 py-4">
