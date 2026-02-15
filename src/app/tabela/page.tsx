@@ -1,7 +1,9 @@
+import Admin from "@/src/components/admin";
+
 export default function Tabela() {
     return (
-        <div>
-            <h1>Teste</h1>
+        <div className="flex flex-col p-10 w-full bg-azul-claro">
+            <Admin />
         </div>
     );
 }
