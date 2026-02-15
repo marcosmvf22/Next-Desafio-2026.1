@@ -33,7 +33,7 @@ export default function Tabela() {
                 <span className="hover:underline">
                   {"Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto.".slice(
                     0,
-                    24,
+                    20,
                   ) + "..."}
                 </span>
               </th>
@@ -68,7 +68,7 @@ export default function Tabela() {
                 <span className="hover:underline">
                   {"Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto.".slice(
                     0,
-                    24,
+                    20,
                   ) + "..."}
                 </span>
               </th>
@@ -103,7 +103,7 @@ export default function Tabela() {
                 <span className="hover:underline">
                   {"Camisa Cruzeiro super confortável, feita com tecido de alta qualidade e design moderno, perfeita para os torcedores do Cruzeiro que desejam mostrar seu amor pelo time com estilo e conforto.".slice(
                     0,
-                    24,
+                    20,
                   ) + "..."}
                 </span>
               </th>

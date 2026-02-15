@@ -5,8 +5,9 @@ import Tabela from "./tabela";
 
 export default function Admin() {
   return (
-    <div>
-      <div className="flex flex-row gap-5 w-full">
+    <div className="flex flex-col gap-10 font-jetbrains  px-20 py-12 w-full">
+        <h1 className="w-full text-center text-azul-escuro text-3xl">Tabela de Produtos</h1>
+      <div className="flex flex-row gap-5 w-full justify-between items-center">
         <span className="text-base self-end text-gray-700">
           56 resultados encontrados...
         </span>
