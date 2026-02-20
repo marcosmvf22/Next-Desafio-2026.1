@@ -1,8 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import { Eye, Pencil, Trash } from "lucide-react";
+import { ModalExcluir } from "./modalExcluir";
+import { ModalVisualizar } from "./modalVisualizar";
+import { ModalEditar } from "./modalEditar";
 
 export default function Tabela() {
+  const [isModalExcluirOpen, setIsModalExcluirOpen] = useState(false);
+  const [isModalVisualizarOpen, setIsModalVisualizarOpen] = useState(false);
+  const [isModalEditarOpen, setIsModalEditarOpen] = useState(false);
+
   return (
     <div className="rounded-xl overflow-hidden">
         <table className="w-full text-sm text-left font-jetbrains bg-azul-medio">
@@ -48,15 +56,37 @@ export default function Tabela() {
               </th>
               <th className="px-6 py-4">
                 <div className="flex flex-row gap-2">
-                  <button className="bg-azul-escuro p-2 rounded-lg">
+                  <button 
+                    className="bg-azul-escuro p-2 rounded-lg"
+                    onClick={() => setIsModalVisualizarOpen(true)}
+                  >
                     <Eye className="w-5 h-5 cursor-pointer text-azul-claro" />
                   </button>
-                  <button className="bg-azul-escuro p-2 rounded-lg">
+                  <button 
+                    className="bg-azul-escuro p-2 rounded-lg"
+                    onClick={() => setIsModalEditarOpen(true)}
+                  >
                     <Pencil className="w-5 h-5 cursor-pointer text-azul-claro" />
                   </button>
-                  <button className="bg-azul-escuro p-2 rounded-lg">
+                  <button 
+                    className="bg-azul-escuro p-2 rounded-lg"
+                    onClick={() => setIsModalExcluirOpen(true)}
+                  >
                     <Trash className="w-5 h-5 cursor-pointer text-azul-claro" />
                   </button>
+                  <ModalVisualizar 
+                    isOpen={isModalVisualizarOpen} 
+                    onClose={() => setIsModalVisualizarOpen(false)} 
+                  />
+                  <ModalEditar 
+                    isOpen={isModalEditarOpen} 
+                    onClose={() => setIsModalEditarOpen(false)} 
+                  />
+                  <ModalExcluir 
+                    isOpen={isModalExcluirOpen} 
+                    onClose={() => setIsModalExcluirOpen(false)} 
+                    onConfirm={() => setIsModalExcluirOpen(false)} 
+                  />
                 </div>
               </th>
             </tr>
