@@ -1,11 +1,11 @@
-"use client";
-
 import HeroSection from "@/src/components/home/herosection";
 import Carrossel from "../../components/home/carrossel";
 import SobreNos from "@/src/components/home/sobre-nos";
 import PrinProdutos from "@/src/components/home/principais-produtos";
+import { getProducts } from "@/actions/home/actions";
 
-export default function Home() {
+
+export default async function Home() {
   const cards = [
     {
       id: 1,
@@ -57,12 +57,14 @@ export default function Home() {
     },
   ];
 
+  const posts = await getProducts()
+
   return (
     <div className="flex flex-col gap-0 m-0 p-0">
     <HeroSection />
-    <Carrossel cards={cards} />
+    <Carrossel posts={posts} />
     <SobreNos />
-    <PrinProdutos cards={cards} />
+    <PrinProdutos posts={posts} />
     </div>
   );
 }
