@@ -4,12 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProductHome } from "@/types/home/home";
 
-// interface CardProps {
-//   image: string;
-//   title: string;
-//   price: number;
-// }
-
 type CardProps = {
   post: ProductHome;
 };

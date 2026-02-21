@@ -6,17 +6,6 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/bundle";
 import { ProductHome } from "@/types/home/home";
 
-// interface CardProps {
-//   id: number;
-//   image: string;
-//   description: string;
-//   price: string;
-// }
-
-// interface CarrosselProps {
-//   cards: CardProps[];
-// }
-
 type CarrosselProps = {
   posts: ProductHome[];
 };

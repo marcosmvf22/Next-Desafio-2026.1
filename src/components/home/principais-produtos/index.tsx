@@ -3,17 +3,6 @@
 import Card from "../carrossel/cards";
 import { ProductHome } from "@/types/home/home";
 
-// interface CardProps {
-//   id: number;
-//   PrincipalImage: string;
-//   title: string;
-//   price: number;
-// }
-
-// interface Props {
-//   cards: CardProps[];
-// }
-
 type PrinProdutosProps = {
   posts: ProductHome[];
 };
