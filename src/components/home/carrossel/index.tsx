@@ -36,16 +36,14 @@ export default function Carrossel({ posts }: CarrosselProps) {
           autoplay={{ delay: 5000 }}
           style={{ paddingBottom: "10px" }}
         >
-          {posts.map((post) => (
+          {posts.map((post, index) => (
             <SwiperSlide
-              key={post.id}
+              key={index}
               className="py-3 px-4 rounded-xl text-white"
             >
               <Card
-                image={post.principalImage}
-                title={post.title}
-                price={post.price}
-              />
+              key={index} 
+              post={post} />
             </SwiperSlide>
           ))}
         </Swiper>
