@@ -15,3 +15,16 @@ export async function FetchPVI(id: number) {
     });
     return post;
 }
+
+export async function GetPVI() {
+    const posts = await prisma.product.findMany({
+        select: {
+            id: true,
+            principalImage: true,
+            title: true,
+            price: true,
+            description: true,
+        },
+    });
+    return posts;
+}

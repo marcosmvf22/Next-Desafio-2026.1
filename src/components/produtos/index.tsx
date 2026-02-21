@@ -3,20 +3,13 @@
 import Pesquisa from "./pesquisa";
 import { Paginacao } from "./paginacao";
 import Card from "./cards";
+import { PageProduct } from "@/types/data";
 
-interface CardProps {
-  id: number;
-  image: string;
-  title: string;
-  price: string;
-  description: string;
-}
+type ProdutosProps = {
+  posts: PageProduct[];
+};
 
-interface Props {
-  cards: CardProps[];
-}
-
-export default function Produtos({ cards }: Props) {
+export default function Produtos({ posts }: ProdutosProps) {
   return (
     <div className="flex flex-col px-18 py-10 gap-16">
       <div className="flex flex-row justify-between items-center px-8 py-4 font-jetbrains">
@@ -24,14 +17,8 @@ export default function Produtos({ cards }: Props) {
         <Pesquisa />
       </div>
       <div className="grid grid-cols-4 grid-rows-2 gap-15 pt-10">
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            image={card.image}
-            title={card.title}
-            price={card.price}
-            description={card.description}
-          />
+        {posts.map((post) => (
+          <Card key={post.id} post={post} />
         ))}
       </div>
       <Paginacao />
