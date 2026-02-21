@@ -1,20 +1,15 @@
 "use client";
 
-export default function DescricaoPVI() {
+import { PostIndividual } from "@/types/data";
+
+export default function DescricaoPVI({post}: {post:  PostIndividual }) {
   return (
     <div className="flex flex-col gap-5 font-jetbrains text-azul-escuro px-5 py-10">
       <h1 className="text-3xl font-bold">Descrição do produto</h1>
       <p className="text-xl font-normal text-justify">
-        Demonstre a paixão Celeste com a Camisa Cruzeiro Dry Masculina!
-        Indispensável na coleção dos torcedores que buscam um visual autêntico,
-        esta camisa do Cruzeiro oferece um design moderno, ideal para exibir seu
-        amor pelo Cabuloso em todas as ocasiões. Confeccionada em tecido leve e
-        respirável que afasta o suor da pele, garante bem-estar e liberdade de
-        movimento, seja nas arquibancadas do Mineirão, no dia a dia ou em
-        momentos de lazer, enquanto as estrelas em destaque e os detalhes
-        autênticos reforçam sua conexão com a rica história do time. Peça já a
-        sua e vista o orgulho Celeste!
+        {post?.description}
       </p>
+      {/* TALVEZ TIRE ISSO */}
       <div className="flex flex-row gap-10">
         {/* Coluna 1 */}
         <div className="flex flex-col gap-4 w-1/3">

@@ -2,14 +2,16 @@
 
 import Image from "next/image";
 import { Plus } from "lucide-react";
+import { PostIndividual } from "@/types/data";
 
-export default function ProdutoPVI() {
+export default function ProdutoPVI({post}: {post:  PostIndividual }) {
   return (
     <div className="flex flex-row gap-15 px-5 py-10 font-jetbrains justify-between">
       <div className="flex flex-col gap-15 w-1/3 text-azul-escuro">
         <h1 className="text-3xl text-azul-escuro font-bold">
-          Camiseta Cruzeiro Retrô Libertadores 1976 - Azul
+          {post?.title}
         </h1>
+        {/* TALVEZ EU TIRO ESSA DESCRIÇÃO */}
         <div className="flex flex-col text-xl gap-3 font-normal"> 
           <p>Composição: 100% Poliéster</p>
           <p>Indicado para: Dia a Dia</p>
@@ -20,15 +22,16 @@ export default function ProdutoPVI() {
         </div>
       </div>
       <Image
-        src="/logo/camisa1.png"
+        src={post?.principalImage ?? ''}
         alt="Camiseta Cruzeiro Retrô Libertadores 1976 - Azul"
         width={904}
         height={904}
         className="w-95 h-110 bg-azul-medio/20"
       />
       <div className="flex flex-col gap-20 py-5 px-0 w-1/3 text-azul-escuro">
-        <p className="font-bold text-3xl">R$ 161,49</p>
+        <p className="font-bold text-3xl">R$ {Number(post?.price).toFixed(2)}</p>
         <div className="flex flex-col gap-5">
+          {/* TALVEZ EU TIRE TAMANHOS */}
           <p className="text-2xl font-medium">Tamanhos:</p>
           <div className="flex flex-row gap-3 text-2xl">
             <button className="bg-white rounded-full w-10 h-10 border-1 border-azul-escuro">P</button>
