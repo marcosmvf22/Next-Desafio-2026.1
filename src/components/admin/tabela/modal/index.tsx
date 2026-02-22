@@ -14,23 +14,20 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      {/* Overlay */}
       <div
         className="absolute inset-0 bg-black/40 backdrop-blur-sm"
         onClick={onClose}
       />
-
-      {/* Modal */}
-      <div className="relative bg-white w-full max-w-md rounded-2xl shadow-xl p-6 z-10">
-        {/* Botão fechar */}
+      <div className="relative bg-white w-full max-w-md max-h-[80vh] rounded-2xl shadow-xl z-10 flex flex-col">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 cursor-pointer"
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 cursor-pointer z-10"
         >
           <X size={18} />
         </button>
-
-        {children}
+        <div className="overflow-y-auto p-6">
+          {children}
+        </div>
       </div>
     </div>
   );
