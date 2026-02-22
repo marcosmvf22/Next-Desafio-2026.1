@@ -3,11 +3,19 @@
 import prisma from "@/src/lib/db";
 import { revalidatePath } from "next/cache";
 
-export async function FetchProduto(page: number = 1, limit: number = 10) {
+export async function FetchProduto(page: number = 1, limit: number = 10, search: string = '') {
     const skip = (page - 1) * limit;
+    
+    const whereClause = search ? {
+        OR: [
+            { title: { contains: search, mode: 'insensitive' as const } },
+            { description: { contains: search, mode: 'insensitive' as const } },
+        ],
+    } : {};
     
     const [produtos, totalCount] = await Promise.all([
         prisma.product.findMany({
+            where: whereClause,
             select: {
                 id: true,
                 principalImage: true,
@@ -19,7 +27,7 @@ export async function FetchProduto(page: number = 1, limit: number = 10) {
             skip,
             take: limit,
         }),
-        prisma.product.count(),
+        prisma.product.count({ where: whereClause }),
     ]);
 
     const totalPages = Math.ceil(totalCount / limit);

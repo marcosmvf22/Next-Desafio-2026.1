@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Plus } from "lucide-react";
+import { Plus, Search, X } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Tabela from "./tabela";
 import { ModalAdicionar } from "./tabela/modalAdicionar";
@@ -19,10 +19,12 @@ type AdminProps = {
   total: number;
   totalPages: number;
   currentPage: number;
+  search: string;
 };
 
-export default function Admin({ produtos, total, totalPages, currentPage }: AdminProps) {
+export default function Admin({ produtos, total, totalPages, currentPage, search }: AdminProps) {
   const [isModalAdicionarOpen, setIsModalAdicionarOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState(search);
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -52,9 +54,42 @@ export default function Admin({ produtos, total, totalPages, currentPage }: Admi
     <div className="flex flex-col gap-10 font-jetbrains px-20 py-12 w-full">
       <h1 className="w-full text-center text-azul-escuro text-3xl">Tabela de Produtos</h1>
       <div className="flex flex-row gap-5 w-full justify-between items-center">
-        <span className="text-base self-end text-gray-700">
-          {total} resultados encontrados...
-        </span>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 bg-white border border-azul-medio rounded-xl px-4 py-2 w-80">
+            <Search className="w-5 h-5 text-azul-escuro flex-shrink-0" />
+            <input
+              type="text"
+              placeholder="Pesquisar"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  const params = new URLSearchParams(searchParams.toString());
+                  params.set('page', '1');
+                  if (searchValue) {
+                    params.set('search', searchValue);
+                  } else {
+                    params.delete('search');
+                  }
+                  router.push(`/tabela?${params.toString()}`);
+                }
+              }}
+              className="outline-none flex-1 text-azul-escuro placeholder:text-gray-400"
+            />
+            {searchValue && (
+              <button
+                onClick={() => {
+                  setSearchValue('');
+                  router.push('/tabela');
+                }}
+                className="text-gray-400 hover:text-azul-escuro transition flex-shrink-0"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+          <span className="text-sm text-gray-500">{total} Resultados encontrados</span>
+        </div>
 
         <button 
           className="flex flex-row bg-azul-escuro text-white p-3 gap-3 items-center rounded-xl cursor-pointer"
