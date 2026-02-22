@@ -13,7 +13,7 @@ const links = [
 
 export default function Sidebar() {
   return (
-    <div className="bg-azul h-200 p-5 flex flex-col justify-between font-jetbrains text-xl">
+    <div className="bg-azul p-5 flex flex-col justify-between font-jetbrains text-xl">
       <div className="flex flex-col items-center">
         <Image
           src={"/logo/logo-bluestars.png"}
