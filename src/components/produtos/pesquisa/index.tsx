@@ -34,17 +34,17 @@ export default function Pesquisa() {
   };
 
   return (
-    <form onSubmit={handleSearch} className="relative w-1/4 bg-azul-claro border border-gray-200 rounded-md">
+    <form onSubmit={handleSearch} className="relative w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 bg-azul-claro border border-gray-200 rounded-md">
         <SearchIcon 
           onClick={handleSearch}
-          className="absolute left-3 top-3/10 w-6 h-6 cursor-pointer text-azul-escuro"
+          className="absolute left-3 top-3/10 w-5 h-5 sm:w-6 sm:h-6 cursor-pointer text-azul-escuro"
         />
         <input 
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Pesquisar produtos..."
-          className="border border-gray-300 rounded-md p-4 pl-12 w-full text-azul-escuro" 
+          className="border border-gray-300 rounded-md p-3 sm:p-4 pl-10 sm:pl-12 w-full text-sm sm:text-base text-azul-escuro" 
         />
         {query && (
           <X 

@@ -36,11 +36,11 @@ export function Paginacao({ totalPages, currentPage }: PaginacaoProps) {
   if (totalPages <= 1) return null;
 
   return (
-    <div className="flex items-center justify-center gap-1">
+    <div className="flex items-center justify-center gap-1 flex-wrap">
       <button
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="px-3 py-2 rounded-l-lg border border-azul-claro bg-white text-azul-escuro hover:bg-azul-claro hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+        className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-l-lg border border-azul-claro bg-white text-azul-escuro hover:bg-azul-claro hover:text-white disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
       >
         &lt;
       </button>
@@ -49,7 +49,7 @@ export function Paginacao({ totalPages, currentPage }: PaginacaoProps) {
           <button
             key={index}
             onClick={() => handlePageChange(page)}
-            className={`w-10 py-2 border border-azul-claro ${
+            className={`w-8 sm:w-10 py-1.5 sm:py-2 border border-azul-claro text-sm sm:text-base ${
               currentPage === page
                 ? "bg-azul-escuro text-white"
                 : "bg-white text-azul-escuro hover:bg-azul-claro hover:text-white"
@@ -58,7 +58,7 @@ export function Paginacao({ totalPages, currentPage }: PaginacaoProps) {
             {page}
           </button>
         ) : (
-          <span key={index} className="w-10 py-2 text-center text-azul-escuro">
+          <span key={index} className="w-8 sm:w-10 py-1.5 sm:py-2 text-center text-azul-escuro text-sm sm:text-base">
             {page}
           </span>
         )
@@ -66,7 +66,7 @@ export function Paginacao({ totalPages, currentPage }: PaginacaoProps) {
       <button
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="px-3 py-2 rounded-r-lg border border-azul-claro bg-white text-azul-escuro hover:bg-azul-claro hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+        className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-r-lg border border-azul-claro bg-white text-azul-escuro hover:bg-azul-claro hover:text-white disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
       >
         &gt;
       </button>
