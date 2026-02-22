@@ -26,7 +26,7 @@ export function ModalEditar({ isOpen, onClose, produto }: ModalEditarProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     title: produto.title,
-    price: String(produto.price),
+    price: produto.price.toFixed(2),
     description: produto.description,
     principalImage: produto.principalImage,
   });
@@ -35,7 +35,7 @@ export function ModalEditar({ isOpen, onClose, produto }: ModalEditarProps) {
   useEffect(() => {
     setFormData({
       title: produto.title,
-      price: String(produto.price),
+      price: produto.price.toFixed(2),
       description: produto.description,
       principalImage: produto.principalImage,
     });
@@ -100,7 +100,7 @@ export function ModalEditar({ isOpen, onClose, produto }: ModalEditarProps) {
           <label className="text-sm text-azul-escuro">Preço</label>
           <input
             type="text"
-            placeholder="161.49"
+            placeholder="Preço"
             value={formData.price}
             onChange={(e) => setFormData({ ...formData, price: e.target.value })}
             className="w-full mt-1 px-3 py-2 rounded-lg border border-azul-medio focus:outline-none focus:ring-2 focus:ring-azul"

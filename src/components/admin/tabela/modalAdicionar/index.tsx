@@ -83,7 +83,7 @@ export function ModalAdicionar({ isOpen, onClose }: ModalAdicionarProps) {
           <label className="text-sm text-azul-escuro">Preço</label>
           <input
             type="text"
-            placeholder="161.49"
+            placeholder="Preço"
             value={formData.price}
             onChange={(e) => setFormData({ ...formData, price: e.target.value })}
             className="w-full mt-1 px-3 py-2 rounded-lg border border-azul-medio focus:outline-none focus:ring-2 focus:ring-azul"
