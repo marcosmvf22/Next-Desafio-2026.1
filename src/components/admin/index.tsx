@@ -56,7 +56,19 @@ export default function Admin({ produtos, total, totalPages, currentPage, search
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full justify-between items-start sm:items-center">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
           <div className="flex items-center gap-2 bg-white border border-azul-medio rounded-xl px-4 py-2 w-full sm:w-64 lg:w-80">
-            <Search className="w-5 h-5 text-azul-escuro flex-shrink-0" />
+            <Search 
+              className="w-5 h-5 text-azul-escuro flex-shrink-0 cursor-pointer"
+              onClick={() => {
+                const params = new URLSearchParams(searchParams.toString());
+                params.set('page', '1');
+                if (searchValue) {
+                  params.set('search', searchValue);
+                } else {
+                  params.delete('search');
+                }
+                router.push(`/tabela?${params.toString()}`);
+              }}
+            />
             <input
               type="text"
               placeholder="Pesquisar"
