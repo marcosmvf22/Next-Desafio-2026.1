@@ -40,67 +40,67 @@ export default function Tabela({ produtos }: TabelaProps) {
   };
 
   return (
-    <div className="rounded-xl overflow-hidden">
-      <table className="w-full text-sm text-left font-jetbrains bg-azul-medio">
+    <div className="rounded-xl overflow-x-auto">
+      <table className="w-full min-w-[700px] text-sm text-left font-jetbrains bg-azul-medio">
         <thead className="text-azul-claro bg-azul-escuro">
           <tr>
-            <th scope="col" className="text-left text-sm px-6 py-4 w-1/12">
+            <th scope="col" className="text-left text-xs sm:text-sm px-3 sm:px-6 py-3 sm:py-4 w-1/12">
               ID
             </th>
-            <th scope="col" className="text-left text-sm px-6 py-4 w-3/12">
+            <th scope="col" className="text-left text-xs sm:text-sm px-3 sm:px-6 py-3 sm:py-4 w-3/12">
               Nome
             </th>
-            <th scope="col" className="text-left text-sm px-6 py-4 w-2/12">
+            <th scope="col" className="text-left text-xs sm:text-sm px-3 sm:px-6 py-3 sm:py-4 w-2/12">
               Preço
             </th>
-            <th scope="col" className="text-left text-sm px-6 py-4 w-4/12">
+            <th scope="col" className="text-left text-xs sm:text-sm px-3 sm:px-6 py-3 sm:py-4 w-4/12">
               Descrição
             </th>
-            <th scope="col" className="text-left text-sm px-6 py-4 w-2/12">
+            <th scope="col" className="text-left text-xs sm:text-sm px-3 sm:px-6 py-3 sm:py-4 w-2/12">
               Ações
             </th>
           </tr>
         </thead>
-        <tbody className="text-azul-escuro">
+        <tbody className="text-azul-escuro text-xs sm:text-sm">
           {produtos.map((produto) => (
             <tr key={produto.id} className="border-b bg-azul-medio">
-              <th className="px-6 py-4">{produto.id}</th>
-              <th className="px-6 py-4">
+              <th className="px-3 sm:px-6 py-3 sm:py-4">{produto.id}</th>
+              <th className="px-3 sm:px-6 py-3 sm:py-4">
                 <span className="hover:underline">
                   {produto.title.length > 20
                     ? produto.title.slice(0, 20) + "..."
                     : produto.title}
                 </span>
               </th>
-              <th className="px-6 py-4">
+              <th className="px-3 sm:px-6 py-3 sm:py-4">
                 R$ {Number(produto.price).toFixed(2)}
               </th>
-              <th className="px-6 py-4">
+              <th className="px-3 sm:px-6 py-3 sm:py-4">
                 <span className="hover:underline">
                   {produto.description.length > 32
                     ? produto.description.slice(0, 32) + "..."
                     : produto.description}
                 </span>
               </th>
-              <th className="px-6 py-4">
-                <div className="flex flex-row gap-2">
+              <th className="px-3 sm:px-6 py-3 sm:py-4">
+                <div className="flex flex-row gap-1 sm:gap-2">
                   <button
-                    className="bg-azul-escuro p-2 rounded-lg"
+                    className="bg-azul-escuro p-1.5 sm:p-2 rounded-lg"
                     onClick={() => handleVisualizar(produto)}
                   >
-                    <Eye className="w-5 h-5 cursor-pointer text-azul-claro" />
+                    <Eye className="w-4 h-4 sm:w-5 sm:h-5 cursor-pointer text-azul-claro" />
                   </button>
                   <button
-                    className="bg-azul-escuro p-2 rounded-lg"
+                    className="bg-azul-escuro p-1.5 sm:p-2 rounded-lg"
                     onClick={() => handleEditar(produto)}
                   >
-                    <Pencil className="w-5 h-5 cursor-pointer text-azul-claro" />
+                    <Pencil className="w-4 h-4 sm:w-5 sm:h-5 cursor-pointer text-azul-claro" />
                   </button>
                   <button
-                    className="bg-azul-escuro p-2 rounded-lg"
+                    className="bg-azul-escuro p-1.5 sm:p-2 rounded-lg"
                     onClick={() => handleExcluir(produto)}
                   >
-                    <Trash className="w-5 h-5 cursor-pointer text-azul-claro" />
+                    <Trash className="w-4 h-4 sm:w-5 sm:h-5 cursor-pointer text-azul-claro" />
                   </button>
                 </div>
               </th>

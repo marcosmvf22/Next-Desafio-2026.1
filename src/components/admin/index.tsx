@@ -51,11 +51,11 @@ export default function Admin({ produtos, total, totalPages, currentPage, search
   };
 
   return (
-    <div className="flex flex-col gap-10 font-jetbrains px-20 py-12 w-full">
-      <h1 className="w-full text-center text-azul-escuro text-3xl">Tabela de Produtos</h1>
-      <div className="flex flex-row gap-5 w-full justify-between items-center">
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2 bg-white border border-azul-medio rounded-xl px-4 py-2 w-80">
+    <div className="flex flex-col gap-6 lg:gap-10 font-jetbrains px-4 sm:px-8 lg:px-20 py-6 lg:py-12 w-full">
+      <h1 className="w-full text-center text-azul-escuro text-xl sm:text-2xl lg:text-3xl">Tabela de Produtos</h1>
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full justify-between items-start sm:items-center">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
+          <div className="flex items-center gap-2 bg-white border border-azul-medio rounded-xl px-4 py-2 w-full sm:w-64 lg:w-80">
             <Search className="w-5 h-5 text-azul-escuro flex-shrink-0" />
             <input
               type="text"
@@ -88,24 +88,26 @@ export default function Admin({ produtos, total, totalPages, currentPage, search
               </button>
             )}
           </div>
-          <span className="text-sm text-gray-500">{total} Resultados encontrados</span>
+          <span className="text-xs sm:text-sm text-gray-500">{total} Resultados</span>
         </div>
 
         <button 
-          className="flex flex-row bg-azul-escuro text-white p-3 gap-3 items-center rounded-xl cursor-pointer"
+          className="flex flex-row bg-azul-escuro text-white p-2 sm:p-3 gap-2 sm:gap-3 items-center rounded-xl cursor-pointer text-sm sm:text-base"
           onClick={() => setIsModalAdicionarOpen(true)}
         >
-          <Plus className="w-6 h-6" />
-          Adicionar
+          <Plus className="w-5 h-5 sm:w-6 sm:h-6" />
+          <span className="hidden sm:inline">Adicionar</span>
         </button>
       </div>
-      <Tabela produtos={produtos} />
+      <div className="overflow-x-auto">
+        <Tabela produtos={produtos} />
+      </div>
       {totalPages > 1 && (
-        <div className="flex items-center justify-center gap-1">
+        <div className="flex items-center justify-center gap-1 flex-wrap">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className="px-3 py-2 rounded-l-lg border border-azul-escuro bg-white text-azul-escuro hover:bg-azul-medio hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-l-lg border border-azul-escuro bg-white text-azul-escuro hover:bg-azul-medio hover:text-white disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
           >
             &lt;
           </button>
@@ -113,7 +115,7 @@ export default function Admin({ produtos, total, totalPages, currentPage, search
             <button
               key={index}
               onClick={() => handlePageChange(page)}
-              className={`w-10 py-2 border border-azul-escuro ${
+              className={`w-8 sm:w-10 py-1.5 sm:py-2 border border-azul-escuro text-sm sm:text-base ${
                 currentPage === page
                   ? "bg-azul-escuro text-white"
                   : "bg-white text-azul-escuro hover:bg-azul-medio hover:text-white"
@@ -125,7 +127,7 @@ export default function Admin({ produtos, total, totalPages, currentPage, search
           <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className="px-3 py-2 rounded-r-lg border border-azul-escuro bg-white text-azul-escuro hover:bg-azul-medio hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-r-lg border border-azul-escuro bg-white text-azul-escuro hover:bg-azul-medio hover:text-white disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
           >
             &gt;
           </button>

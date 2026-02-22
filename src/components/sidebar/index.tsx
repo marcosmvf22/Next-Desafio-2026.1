@@ -13,16 +13,16 @@ const links = [
 
 export default function Sidebar() {
   return (
-    <div className="bg-azul p-5 flex flex-col justify-between font-jetbrains text-xl">
+    <div className="bg-azul p-3 lg:p-5 flex flex-col justify-between font-jetbrains text-xl min-h-screen">
       <div className="flex flex-col items-center">
         <Image
           src={"/logo/logo-bluestars.png"}
           alt="Logo do blog"
           width={262}
           height={160}
-          className="h-40 w-40 rounded-xl"
+          className="h-12 w-12 lg:h-40 lg:w-40 rounded-xl"
         />
-        <div className="flex flex-col gap-5 pr-2">
+        <div className="flex flex-col gap-5 lg:pr-2 mt-4 lg:mt-0">
           {links.map((link) => {
             const Icon = link.icon;
 
@@ -30,10 +30,11 @@ export default function Sidebar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="flex items-center gap-3 p-3 rounded-xl text-white"
+                className="flex items-center justify-center lg:justify-start gap-3 p-3 rounded-xl text-white"
+                title={link.label}
               >
                 <Icon className="w-6 h-6" />
-                {link.label}
+                <span className="hidden lg:inline">{link.label}</span>
               </Link>
             );
           })}
@@ -41,10 +42,11 @@ export default function Sidebar() {
       </div>
       <Link
         href="/"
-        className="flex items-center gap-3 bg-azul-escuro p-3 rounded-xl text-white w-full"
+        className="flex items-center justify-center lg:justify-start gap-3 bg-azul-escuro p-3 rounded-xl text-white w-full"
+        title="Logout"
       >
         <LogOutIcon className="w-6 h-6" />
-        Logout
+        <span className="hidden lg:inline">Logout</span>
       </Link>
     </div>
   );
