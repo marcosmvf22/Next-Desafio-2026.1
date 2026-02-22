@@ -2,9 +2,10 @@
 
 import { Modal } from "../modal";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { CreateProduto } from "@/actions/admin/action";
 import { useRouter } from "next/navigation";
+import { Upload } from "lucide-react";
 
 interface ModalAdicionarProps {
   isOpen: boolean;
@@ -18,12 +19,24 @@ export function ModalAdicionar({ isOpen, onClose }: ModalAdicionarProps) {
     title: "",
     price: "",
     description: "",
-    principalImage: "/logo/camisa1.png",
+    principalImage: "",
   });
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData({ ...formData, principalImage: reader.result as string });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = async () => {
-    if (!formData.title || !formData.price || !formData.description) {
-      alert("Preencha todos os campos!");
+    if (!formData.title || !formData.price || !formData.description || !formData.principalImage) {
+      alert("Preencha todos os campos e adicione uma imagem!");
       return;
     }
 
@@ -35,7 +48,7 @@ export function ModalAdicionar({ isOpen, onClose }: ModalAdicionarProps) {
         price: parseFloat(formData.price.replace(",", ".")),
         principalImage: formData.principalImage,
       });
-      setFormData({ title: "", price: "", description: "", principalImage: "/logo/camisa1.png" });
+      setFormData({ title: "", price: "", description: "", principalImage: "" });
       onClose();
       router.refresh();
     } catch (error) {
@@ -89,28 +102,46 @@ export function ModalAdicionar({ isOpen, onClose }: ModalAdicionarProps) {
           />
         </div>
 
-        {/* Imagem */}
-        <div>
-          <label className="text-sm text-azul-escuro">URL da Imagem</label>
-          <input
-            type="text"
-            placeholder="/logo/camisa1.png"
-            value={formData.principalImage}
-            onChange={(e) => setFormData({ ...formData, principalImage: e.target.value })}
-            className="w-full mt-1 px-3 py-2 rounded-lg border border-azul-medio focus:outline-none focus:ring-2 focus:ring-azul"
-          />
-        </div>
-
-        {/* Preview da Imagem */}
+        {/* Upload de Imagem */}
         <div className="flex flex-col items-center mt-2">
-          <span className="text-sm text-azul-escuro mb-2">Preview</span>
-          <Image
-            src={formData.principalImage || "/logo/camisa1.png"}
-            alt="Preview"
-            width={150}
-            height={150}
-            className="object-contain"
+          <span className="text-sm text-azul-escuro mb-2">Imagem do Produto</span>
+          
+          <input
+            type="file"
+            ref={fileInputRef}
+            onChange={handleImageUpload}
+            accept="image/*"
+            className="hidden"
           />
+          
+          {formData.principalImage ? (
+            <div className="relative">
+              <Image
+                src={formData.principalImage}
+                alt="Preview"
+                width={150}
+                height={150}
+                className="object-contain rounded-lg"
+              />
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                className="mt-2 flex items-center gap-2 px-4 py-2 bg-azul-medio text-azul-escuro rounded-lg hover:bg-azul-claro transition"
+              >
+                <Upload size={16} />
+                Trocar Imagem
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              className="flex flex-col items-center justify-center gap-2 w-40 h-40 border-2 border-dashed border-azul-medio rounded-lg hover:border-azul hover:bg-azul-claro/20 transition cursor-pointer"
+            >
+              <Upload size={32} className="text-azul-escuro" />
+              <span className="text-sm text-azul-escuro">Upload Imagem</span>
+            </button>
+          )}
         </div>
 
         {/* Botões */}

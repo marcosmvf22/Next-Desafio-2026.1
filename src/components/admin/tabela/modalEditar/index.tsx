@@ -2,9 +2,10 @@
 
 import { Modal } from "../modal";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { UpdateProduto } from "@/actions/admin/action";
 import { useRouter } from "next/navigation";
+import { Upload } from "lucide-react";
 
 type Produto = {
   id: number;
@@ -29,6 +30,7 @@ export function ModalEditar({ isOpen, onClose, produto }: ModalEditarProps) {
     description: produto.description,
     principalImage: produto.principalImage,
   });
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setFormData({
@@ -38,6 +40,17 @@ export function ModalEditar({ isOpen, onClose, produto }: ModalEditarProps) {
       principalImage: produto.principalImage,
     });
   }, [produto]);
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData({ ...formData, principalImage: reader.result as string });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = async () => {
     if (!formData.title || !formData.price || !formData.description) {
@@ -106,28 +119,35 @@ export function ModalEditar({ isOpen, onClose, produto }: ModalEditarProps) {
           />
         </div>
 
-        {/* Imagem */}
-        <div>
-          <label className="text-sm text-azul-escuro">URL da Imagem</label>
-          <input
-            type="text"
-            placeholder="/logo/camisa1.png"
-            value={formData.principalImage}
-            onChange={(e) => setFormData({ ...formData, principalImage: e.target.value })}
-            className="w-full mt-1 px-3 py-2 rounded-lg border border-azul-medio focus:outline-none focus:ring-2 focus:ring-azul"
-          />
-        </div>
-
-        {/* Preview da Imagem */}
+        {/* Upload de Imagem */}
         <div className="flex flex-col items-center mt-2">
-          <span className="text-sm text-azul-escuro mb-2">Preview</span>
-          <Image
-            src={formData.principalImage || "/logo/camisa1.png"}
-            alt="Preview"
-            width={150}
-            height={150}
-            className="object-contain"
+          <span className="text-sm text-azul-escuro mb-2">Imagem do Produto</span>
+          
+          <input
+            type="file"
+            ref={fileInputRef}
+            onChange={handleImageUpload}
+            accept="image/*"
+            className="hidden"
           />
+          
+          <div className="relative">
+            <Image
+              src={formData.principalImage || "/logo/camisa1.png"}
+              alt="Preview"
+              width={150}
+              height={150}
+              className="object-contain rounded-lg"
+            />
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              className="mt-2 flex items-center gap-2 px-4 py-2 bg-azul-medio text-azul-escuro rounded-lg hover:bg-azul-claro transition"
+            >
+              <Upload size={16} />
+              Trocar Imagem
+            </button>
+          </div>
         </div>
 
         {/* Botões */}
