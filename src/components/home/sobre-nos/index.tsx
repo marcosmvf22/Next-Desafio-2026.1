@@ -1,11 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import { Target } from "lucide-react";
-import { Eye } from "lucide-react";
-import { Heart } from "lucide-react";
+import { Target, Eye, Heart, LucideIcon } from "lucide-react";
 
-export default function SobreNos() {
+type IdentityItem = {
+  id: number;
+  title: string;
+  text: string;
+};
+
+type SobreNosProps = {
+  data: IdentityItem[];
+};
+
+const iconMap: Record<string, LucideIcon> = {
+  "Missão": Target,
+  "Visão": Eye,
+  "Valores": Heart,
+};
+
+export default function SobreNos({ data }: SobreNosProps) {
   return (
     <div className="flex flex-col gap-8 sm:gap-12 md:gap-16 items-center px-4 sm:px-8 md:px-12 lg:px-18 pb-8 sm:pb-10 md:pb-12 pt-8 sm:pt-10 md:pt-12 bg-azul font-jetbrains">
       <div className="flex flex-col xl:flex-row gap-8 md:gap-12 lg:gap-20 font-extrabold">
@@ -36,41 +50,25 @@ export default function SobreNos() {
         </div>
       </div>
       <div className="flex flex-col xl:flex-row justify-between gap-6 sm:gap-8 md:gap-12 lg:gap-25 w-full">
-        <div className="flex flex-col gap-4 sm:gap-6 md:gap-10 justify-center text-center drop-shadow-black drop-shadow-lg text-azul-escuro bg-azul-medio w-full min-[1440px]:w-1/3 p-4 sm:p-6 md:p-8 pt-2 rounded-xl items-center">
-          <h1 className="font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl">Missão</h1>
-          <p className="font-normal text-sm sm:text-base md:text-lg lg:text-xl">
-            Oferecer camisas com qualidade e autenticidade, levando ao torcedor
-            a oportunidade de vestir sua paixão com estilo, segurança e
-            confiança em cada compra.
-          </p>
-          <div className="bg-azul-escuro rounded-full p-2 sm:p-3 md:p-4 w-12 h-12 sm:w-16 sm:h-16 md:w-21 md:h-21 flex items-center">
-            <Target className="mx-auto h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16 text-azul-claro" />
-          </div>
-        </div>
-        <div className="flex flex-col gap-4 sm:gap-6 md:gap-10 text-center justify-center drop-shadow-black drop-shadow-lg text-azul-escuro bg-azul-medio w-full min-[1440px]:w-1/3 p-4 sm:p-6 md:p-8 pt-2 rounded-xl items-center">
-          <h1 className="font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl">Visão</h1>
-          <p className="font-normal text-sm sm:text-base md:text-lg lg:text-xl">
-            Ser referência nacional em venda de camisas esportivas, reconhecida
-            pela qualidade dos produtos, excelência no atendimento e pela
-            confiança construída com cada cliente.
-          </p>
-          <div className="bg-azul-escuro rounded-full p-2 sm:p-3 md:p-4 w-12 h-12 sm:w-16 sm:h-16 md:w-21 md:h-21 flex items-center">
-            <Eye className="mx-auto h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16 text-azul-claro" />
-          </div>
-        </div>
-        <div className="flex flex-col gap-4 sm:gap-6 md:gap-10 text-center justify-center drop-shadow-black drop-shadow-lg text-azul-escuro bg-azul-medio w-full min-[1440px]:w-1/3 p-4 sm:p-6 md:p-8 pt-6 sm:pt-8 md:pt-12 pb-6 sm:pb-8 md:pb-12 rounded-xl items-center">
-          <h1 className="font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl">Valores</h1>
-          <p className="font-normal text-sm sm:text-base md:text-lg lg:text-xl">
-            Paixão pelo futebol, compromisso com a qualidade, confiança e
-            transparência em cada compra, atendimento rápido e humano, respeito
-            ao cliente em todas as etapas, responsabilidade no envio dos pedidos
-            e evolução constante para oferecer sempre a melhor experiência
-            possível.
-          </p>
-          <div className="bg-azul-escuro rounded-full p-2 sm:p-3 md:p-4 w-12 h-12 sm:w-16 sm:h-16 md:w-21 md:h-21 flex items-center">
-            <Heart className="mx-auto h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16 text-azul-claro" />
-          </div>
-        </div>
+        {data.map((item) => {
+          const Icon = iconMap[item.title] || Target;
+          return (
+            <div
+              key={item.id}
+              className="flex flex-col gap-4 sm:gap-6 md:gap-10 justify-center text-center drop-shadow-black drop-shadow-lg text-azul-escuro bg-azul-medio w-full min-[1440px]:w-1/3 p-4 sm:p-6 md:p-8 pt-2 rounded-xl items-center"
+            >
+              <h1 className="font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+                {item.title}
+              </h1>
+              <p className="font-normal text-sm sm:text-base md:text-lg lg:text-xl">
+                {item.text}
+              </p>
+              <div className="bg-azul-escuro rounded-full p-2 sm:p-3 md:p-4 w-12 h-12 sm:w-16 sm:h-16 md:w-21 md:h-21 flex items-center">
+                <Icon className="mx-auto h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16 text-azul-claro" />
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
