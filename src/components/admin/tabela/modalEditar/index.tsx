@@ -131,7 +131,7 @@ export function ModalEditar({ isOpen, onClose, produto }: ModalEditarProps) {
             className="hidden"
           />
           
-          <div className="relative">
+          <div className="relative flex flex-col items-center">
             <Image
               src={formData.principalImage || "/logo/camisa1.png"}
               alt="Preview"

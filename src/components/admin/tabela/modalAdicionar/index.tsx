@@ -115,7 +115,7 @@ export function ModalAdicionar({ isOpen, onClose }: ModalAdicionarProps) {
           />
           
           {formData.principalImage ? (
-            <div className="relative">
+            <div className="relative flex flex-col items-center">
               <Image
                 src={formData.principalImage}
                 alt="Preview"
