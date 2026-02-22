@@ -24,7 +24,6 @@ export default function Footer() {
                     <Twitter className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"/>
                 </div>
             </div>
-            
             {/* Logo e Copyright */}
             <div className="flex flex-col items-center text-white pb-2 sm:pb-4 text-xs sm:text-sm md:text-md font-normal order-first md:order-none">
                 <Image
@@ -36,7 +35,6 @@ export default function Footer() {
                 />
                 © 2026 Todos os direitos reservados
             </div>
-            
             {/* Contato */}
             <div className="flex flex-col items-center text-white gap-2 sm:gap-3 md:gap-4 font-normal text-base sm:text-lg md:text-xl">
                 Contato

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -19,7 +19,6 @@ export default function Navbar() {
   return (
     <header className="bg-[#1D5DAF] top-0 z-20 mx-auto w-full py-4 sm:py-6 md:py-8 px-4 sm:px-6 md:px-0">
       <div className="flex flex-row items-center justify-between w-full pr-4 sm:pr-6 md:pr-10 font-jetbrains">
-        
         <Link href="/" className="flex gap-4 items-center">
           <Image
             src={"/logo/logo-bluestars.png"}
@@ -29,8 +28,6 @@ export default function Navbar() {
             className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-30 lg:w-30 rounded-xl"
           />
         </Link>
-
-        {/* MENU DESKTOP (lg pra cima mantém seu layout original) */}
         <div className="hidden lg:flex flex-row items-center gap-3 xl:gap-5">
           {links.map((link) => (
             <Link
@@ -45,8 +42,6 @@ export default function Navbar() {
             <ShoppingCartIcon className="w-8 h-8 xl:w-10 xl:h-10" />
           </Link>
         </div>
-
-        {/* BOTÃO MOBILE (até lg) */}
         <button
           className="lg:hidden text-white"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -54,7 +49,6 @@ export default function Navbar() {
           {menuOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
       </div>
-
       {/* MENU MOBILE */}
       {menuOpen && (
         <div className="lg:hidden flex flex-col items-center gap-3 sm:gap-4 pb-4 sm:pb-6 pt-4 font-jetbrains">
@@ -68,7 +62,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-
           <Link
             href="/carrinho"
             className="rounded-xl text-white"
