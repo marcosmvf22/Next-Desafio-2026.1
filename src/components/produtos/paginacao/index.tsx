@@ -1,18 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 interface PaginacaoProps {
-  totalPages?: number;
-  onPageChange?: (page: number) => void;
+  totalPages: number;
+  currentPage: number;
 }
 
-export function Paginacao({ totalPages = 10, onPageChange }: PaginacaoProps) {
-  const [currentPage, setCurrentPage] = useState(1);
+export function Paginacao({ totalPages, currentPage }: PaginacaoProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    onPageChange?.(page);
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('page', page.toString());
+    router.push(`/produtos?${params.toString()}`);
   };
 
   const getVisiblePages = () => {
@@ -30,6 +32,8 @@ export function Paginacao({ totalPages = 10, onPageChange }: PaginacaoProps) {
     }
     return pages;
   };
+
+  if (totalPages <= 1) return null;
 
   return (
     <div className="flex items-center justify-center gap-1">

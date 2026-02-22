@@ -2,6 +2,7 @@
 
 import { PageProduct } from "@/types/data";
 import Image from "next/image";
+import Link from "next/link";
 
 type CardProps = {
     post: PageProduct
@@ -9,7 +10,8 @@ type CardProps = {
 
 export default function Card({ post }: CardProps) {
   return (
-    <div className="bg-azul-claro mx-auto w-full py-8 pb-4 px-4 flex flex-col items-center gap-4 rounded-xl">
+    <Link href={`/pvi/${post.id}`} className="w-full h-full">
+    <div className="bg-azul-claro mx-auto w-full py-8 pb-4 px-4 flex flex-col items-center gap-4 rounded-xl hover:scale-105 transition-transform">
         <div>
             <Image
                 src={post.principalImage}
@@ -29,5 +31,6 @@ export default function Card({ post }: CardProps) {
             <p>{post.description}</p>
         </div>
     </div>
+    </Link>
   );
 }

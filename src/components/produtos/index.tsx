@@ -7,9 +7,11 @@ import { PageProduct } from "@/types/data";
 
 type ProdutosProps = {
   posts: PageProduct[];
+  totalPages: number;
+  currentPage: number;
 };
 
-export default function Produtos({ posts }: ProdutosProps) {
+export default function Produtos({ posts, totalPages, currentPage }: ProdutosProps) {
   return (
     <div className="flex flex-col px-18 py-10 gap-16">
       <div className="flex flex-row justify-between items-center px-8 py-4 font-jetbrains">
@@ -21,7 +23,7 @@ export default function Produtos({ posts }: ProdutosProps) {
           <Card key={post.id} post={post} />
         ))}
       </div>
-      <Paginacao />
+      <Paginacao totalPages={totalPages} currentPage={currentPage} />
     </div>
   );
 }
