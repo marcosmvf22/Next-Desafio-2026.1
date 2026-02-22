@@ -34,7 +34,7 @@ export default function Pesquisa() {
   };
 
   return (
-    <form onSubmit={handleSearch} className="flex items-center gap-2 w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 bg-azul-claro border border-gray-200 rounded-md px-3 py-2">
+    <form onSubmit={handleSearch} className="flex items-center gap-2 w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 bg-azul-claro border border-gray-200 rounded-md px-3 py-2 font-jetbrains">
         <SearchIcon 
           onClick={handleSearch}
           className="w-5 h-5 sm:w-6 sm:h-6 cursor-pointer text-azul-escuro flex-shrink-0"

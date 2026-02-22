@@ -36,7 +36,7 @@ export function Paginacao({ totalPages, currentPage }: PaginacaoProps) {
   if (totalPages <= 1) return null;
 
   return (
-    <div className="flex items-center justify-center gap-1 flex-wrap">
+    <div className="flex items-center justify-center gap-1 flex-wrap font-jetbrains">
       <button
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}

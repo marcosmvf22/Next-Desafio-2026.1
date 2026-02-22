@@ -11,7 +11,7 @@ type CardProps = {
 export default function Card({ post }: CardProps) {
   return (
     <Link href={`/pvi/${post.id}`} className="w-full h-full">
-      <div className="bg-azul-claro mx-auto w-full h-full py-4 sm:py-6 md:py-8 pb-4 px-2 sm:px-3 md:px-4 flex flex-col gap-2 sm:gap-3 md:gap-4 rounded-xl items-center">
+      <div className="bg-azul-claro mx-auto w-full h-full py-4 sm:py-6 md:py-8 pb-4 px-2 sm:px-3 md:px-4 flex flex-col gap-2 sm:gap-3 md:gap-4 rounded-xl items-center font-jetbrains">
         <div>
           <Image
             src={post.principalImage}
