@@ -18,10 +18,18 @@ export default function Footer() {
                     Redes Sociais
                 </div>
                 <div className="flex flex-row gap-2 sm:gap-3 text-white p-2">
-                    <Instagram className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"/>
-                    <Linkedin className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"/>
-                    <Facebook className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"/>
-                    <Twitter className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"/>
+                    <a href="https://www.instagram.com/codejr/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
+                        <Instagram className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"/>
+                    </a>
+                    <a href="https://www.linkedin.com/company/codejr/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
+                        <Linkedin className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"/>
+                    </a>
+                    <a href="https://www.instagram.com/codejr/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
+                        <Facebook className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"/>
+                    </a>
+                    <a href="https://www.instagram.com/codejr/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
+                        <Twitter className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"/>
+                    </a>
                 </div>
             </div>
             {/* Logo e Copyright */}
@@ -40,11 +48,11 @@ export default function Footer() {
                 Contato
                 <div className="flex flex-row gap-2 items-center">
                     <Phone className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6"/>
-                    <span className="text-sm sm:text-base md:text-lg">(32)0000-0000</span>
+                    <span className="text-sm sm:text-base md:text-lg">(32)9 9808-0429</span>
                 </div>
                 <div className="flex flex-row gap-2 items-center">
                     <Mail className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6"/>
-                    <span className="text-sm sm:text-base md:text-lg">email@email.com</span>
+                    <span className="text-sm sm:text-base md:text-lg">marcos.vinicius@codejr.com.br</span>
                 </div>
             </div>
         </div>
