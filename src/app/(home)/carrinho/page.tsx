@@ -30,8 +30,6 @@ export default function PagCarrinho() {
     // },
   // ];
   return (
-    <div className="bg-[url('/logo/carrinho.png')]">
-      <Carrinho />
-    </div>
+    <Carrinho />
   );
 }

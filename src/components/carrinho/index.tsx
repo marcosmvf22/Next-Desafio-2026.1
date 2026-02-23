@@ -53,13 +53,13 @@ export default function Carrinho() {
   });
 
   return (
-    <div className="flex flex-row bg-[url('/logo/carrinho.png')] w-full min-h-screen bg-cover font-jetbrains text-azul-escuro gap-30 px-30 py-15">
-      <div className="flex flex-col gap-10 w-1/2">
-        <h1 className="text-azul-claro text-3xl text-start font-bold">
+    <div className="flex flex-col lg:flex-row bg-azul-escuro lg:bg-[url('/logo/carrinho.png')] w-full min-h-screen bg-cover font-jetbrains text-azul-escuro gap-6 sm:gap-10 lg:gap-30 px-4 sm:px-8 lg:px-30 py-8 sm:py-12 lg:py-15">
+      <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10 w-full lg:w-1/2">
+        <h1 className="text-azul-claro text-xl sm:text-2xl lg:text-3xl text-start font-bold">
           Meu Carrinho
         </h1>
         {cartItems.length === 0 ? (
-          <p className="text-azul-claro text-xl">Seu carrinho está vazio.</p>
+          <p className="text-azul-claro text-base sm:text-lg lg:text-xl">Seu carrinho está vazio.</p>
         ) : (
           cartItems.map((item) => (
             <CardCarrinho
@@ -76,16 +76,16 @@ export default function Carrinho() {
           ))
         )}
       </div>
-      <div className="flex flex-col justify-between w-1/3">
-        <h1 className="text-azul-claro text-3xl text-start font-bold">Resumo da Compra</h1>
-        <div className="bg-azul-claro gap-10 p-5 rounded-lg flex flex-col items-center">
-          <p className="font-normal text-xl">Subtotal ({totalItens} Itens)</p>
-          <p className="font-extrabold text-3xl">{totalPriceFormatted}</p>
-          <button className="bg-azul-escuro text-white w-full font-bold py-3 px-6 rounded-lg hover:bg-azul-medio cursor-pointer transition">
+      <div className="flex flex-col gap-6 lg:justify-between w-full lg:w-1/3">
+        <h1 className="text-azul-claro text-xl sm:text-2xl lg:text-3xl text-start font-bold">Resumo da Compra</h1>
+        <div className="bg-azul-claro gap-4 sm:gap-6 lg:gap-10 p-4 sm:p-5 rounded-lg flex flex-col items-center">
+          <p className="font-normal text-base sm:text-lg lg:text-xl">Subtotal ({totalItens} Itens)</p>
+          <p className="font-extrabold text-xl sm:text-2xl lg:text-3xl">{totalPriceFormatted}</p>
+          <button className="bg-azul-escuro text-white w-full font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-azul-medio cursor-pointer transition text-sm sm:text-base">
             Finalizar compra
           </button>
         </div>
-        <div></div>
+        <div className="hidden lg:block"></div>
       </div>
     </div>
   );
